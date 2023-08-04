@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require("sequelize");
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 let dbConnect = require("../dbConnect");
 
 const sequelizeInstance = dbConnect.Sequelize;
@@ -48,6 +48,14 @@ User.init(
     modelName: "users",
     timestamps: true,
     freezeTableName: true,
+    defaultScope: {
+      attributes: { exclude: ["password"]},
+    },
+    scopes: {
+      withPassword: {
+        attributes: {}
+      }
+    }
 
     // hooks: {
     //   beforeCreate: async (user) => {

@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require("sequelize");
-// const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 let dbConnect = require("../dbConnect");
 
 const sequelizeInstance = dbConnect.Sequelize;

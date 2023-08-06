@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 
 require("dotenv").config();
@@ -13,9 +13,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 
-
 app.get("/", (req, res) => {
-    res.json({message: "Welcome to Plant Assist"});
+    res.send({message: "Welcome to Plant Assist"});
 });
 
 // app.post('/users', (req, res) => {

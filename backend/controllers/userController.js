@@ -53,6 +53,7 @@ const createUsers = async (data, res) => {
       console.log("Error:", err)
       throw err
     })
+    console.log("Router:", req.body)
 }
 
 const updateUser = (req, res) => {

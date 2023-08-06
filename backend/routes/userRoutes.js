@@ -15,6 +15,7 @@ router.get("/:id", (req, res) => {
 // localhost:8080/api/users/create
 router.post("/create", (req, res) => {
   Controllers.userController.createUsers(req.body, res)
+  console.log("Router:", req.body)
 })
 
 // localhost:8080/api/users/login
@@ -31,5 +32,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   Controllers.userController.deleteUser(req, res)
 })
+
+// console.log("Router:", req.body)
 
 module.exports = router;

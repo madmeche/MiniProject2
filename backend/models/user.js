@@ -25,16 +25,11 @@ User.init(
       allowNull: false,
       required: true,
     },
-    emailId: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
       unique: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      required: true,
     },
     username: {
         type: DataTypes.STRING,
@@ -42,6 +37,12 @@ User.init(
         required: true,
         unique: true,
   },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      required: true,
+    },
+    
 },
   {
     sequelize: sequelizeInstance,

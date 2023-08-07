@@ -36,6 +36,7 @@ const getUsersById = (req, res) => {
 // Should not use this to create users from front end, instead use the auth route/controller
 // Leaving this here for your reference
 const createUsers = async (data, res) => {
+  
   // Bcrypt documentation: https://www.npmjs.com/package/bcrypt
   // Generate a salt, define the rounds
   const rounds = 10 //any more than 10 will take exponentially more CPU power
@@ -45,7 +46,9 @@ const createUsers = async (data, res) => {
   data.password = hashedPassword;
   
   Models.User.create(data)
+  console.log("Controller:", req.body)
     .then((data) => {
+      console.log("Controller:", req.body)
       data.password = undefined; //Remove the password property
       res.send({result: 201, data: data})
     })
@@ -53,10 +56,10 @@ const createUsers = async (data, res) => {
       console.log("Error:", err)
       throw err
     })
-    console.log("Router:", req.body)
 }
 
 const updateUser = (req, res) => {
+  console.log("Controller:", req.body)
   Models.User.update(req.body, { where: {id: req.params.id}})
     .then((data) => {
       res.send({result: 201, data: data})
@@ -68,6 +71,7 @@ const updateUser = (req, res) => {
 }
 
 const deleteUser = (req, res) => {
+  console.log("Controller:", req.body)
   Models.User.destroy( {where: {id: req.params.id}})
     .then((data) => {
       res.send({result: 201, data: data})

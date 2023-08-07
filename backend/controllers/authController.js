@@ -36,7 +36,7 @@ const signUpUser = async (data, res) => {
 
 
 const loginUserByEmail = (data, res) => {
-  const unhashedPassword = data.password
+  const unhashedPassword = req.data.password
   const email = req.body.email
 
 
@@ -44,7 +44,7 @@ const loginUserByEmail = (data, res) => {
     .then((data) => {
    
       if(data && bcrypt.compareSync(unhashedPassword, data[0].dataValues.password)){
-        // data[0].dataValues.password = undefined
+        data[0].dataValues.password = undefined
         res.status(200).send({ success: true, data: data})
       }else {
         console.log('password is incorrect')

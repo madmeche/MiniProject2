@@ -46,11 +46,11 @@ const createUsers = async (data, res) => {
   data.password = hashedPassword;
   
   Models.User.create(data)
-  console.log("Controller:", req.body)
+ 
     .then((data) => {
-      console.log("Controller:", req.body)
+       // console.log("Controller:", data)
       data.password = undefined; //Remove the password property
-      res.send({result: 201, data: data})
+      res.status(201).json({result: 201, data: data})
     })
     .catch(err => {
       console.log("Error:", err)

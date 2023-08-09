@@ -21,7 +21,7 @@ router.post("/create", (req, res) => {
   
 })
 
-// localhost:8080/api/users/login
+// localhost:8080/api/users/login  ** use get, not post
 router.post("/login", (req, res) => {
     console.log("Router:", req.body)
   Controllers.userController.getUsersByEmail(req, res)
@@ -33,7 +33,7 @@ router.put('/:id', (req, res) => {
   Controllers.userController.updateUser(req, res)
 })
 
-// localhost:8080/api/users/:<user_id>
+// localhost:8080/api/users/<user_id>  **Had to get rid of the colon for the delete to work
 router.delete('/:id', (req, res) => {
     console.log("Router:", req.body)
   Controllers.userController.deleteUser(req, res)

@@ -1,11 +1,13 @@
 const { DataTypes, Model } = require("sequelize");
-const bcrypt = require("bcrypt");
 let dbConnect = require("../dbConnect");
-const Schema = dbConnect.connectMysql.Schema;
+// const Schema = dbConnect.connectMysql.Schema;
 
 const sequelizeInstance = dbConnect.Sequelize;
 
-const newFolder = new Schema(
+class Folder extends Model {}
+
+Folder.init(
+// const newFolder = new Schema(
   {
     title: {
       type: String,
@@ -28,9 +30,9 @@ const newFolder = new Schema(
   },
   {
     sequelize: sequelizeInstance,
-    modelName: "folders",
+    modelName: "Folder",
     timestamps: true,
   }
 );
 
-module.exports = ("New Folder", newFolder);
+module.exports = ("New Folder", Folder);

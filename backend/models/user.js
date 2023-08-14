@@ -42,6 +42,27 @@ User.init(
       allowNull: false,
       required: true,
     },
+    plantId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      // autoIncrement: true,
+    },
+    folderId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      // autoIncrement: true,
+    },
+    favoriteId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      // autoIncrement: true,
+    },
+    recentId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      // autoIncrement: true,
+      timestamps: true,
+    },
     
 },
   {

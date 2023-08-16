@@ -17,10 +17,10 @@ User.init(
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,                                                              
       required: true,
     },
-    lastName: {
+    lastName: {                        
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
@@ -42,25 +42,25 @@ User.init(
       allowNull: false,
       required: true,
     },
-    plantId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // autoIncrement: true,
+    // PLURAL WILL CONTAIN A JSON OBJECT OF PLANTS IDS
+    plantIds: {
+      type: DataTypes.JSON,
+     
     },
+    //PLURAL WILL CONTAIN A JOSN OBJECT OF FOLDER IDS
     folderId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // autoIncrement: true,
+      type: DataTypes.JSON,
+  
     },
+    //SINGULAR WILL POINT TO A RECORD BY FAVORITE ID
     favoriteId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // autoIncrement: true,
+      type: DataTypes.STRING,
+
     },
+
+    //SINGULAR WILL POINT TO A RECORD BY RECENT ID
     recentId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // autoIncrement: true,
+      type: DataTypes.STRING,
       timestamps: true,
     },
     

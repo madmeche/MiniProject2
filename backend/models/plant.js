@@ -15,7 +15,7 @@ Plant.init(
       primaryKey: true,
     },
     name: {
-      typee: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       required: true,
     },

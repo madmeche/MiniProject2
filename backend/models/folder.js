@@ -15,17 +15,8 @@ Folder.init(
       maxlength: [10, "Title can not be more than 25 characters"],
       minlength: [3, "Title must have atleast three character"],
     },
-    description: {
-      type: String,
-      required: [true, "Place your description here."],
-    },
-    content: {
-      type: Blob,
-      require: [true, "Save for later."],
-    },
-    datePosted: {
-      type: Date,
-      default: Date.now(),
+    plantIds: {
+      type: DataTypes.JSON,
     },
   },
   {

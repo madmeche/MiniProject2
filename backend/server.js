@@ -7,11 +7,16 @@ let dbconnect = require('./dbConnect')
 
 const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
+const plantRoutes = require('./routes/plantRoutes')
+
+const seedUser = require('./seeds/seedUser')
 
 app.use(express.json());
 
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/plant', plantRoutes)
+// app.use('/api/seed', seedUser)
 
 app.get("/", (req, res) => {
     res.send({message: "Welcome to Plant Assist"});

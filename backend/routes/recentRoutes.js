@@ -4,23 +4,23 @@ const Controllers = require('../controllers')
 
 // localhost:8080/api/users/
 router.get("/", (req, res) => {
-  Controllers.favoriteController.getFavorite(res)
+  Controllers.recentController.getRecent(res)
 })
 
 // localhost:8080/api/users/create
 router.post("/create", (req, res) => {
-  Controllers.favoriteController.createFavorite(req.body, res)
+  Controllers.recentController.createRecent(req.body, res)
   
 })
 
 // localhost:8080/api/users/:<user_id>
 router.put('/:id', (req, res) => {
-  Controllers.favoriteController.updateFavorite(req, res)
+  Controllers.recentController.updateRecents(req, res)
 })
 
 // localhost:8080/api/users/<user_id>  
 router.delete('/:id', (req, res) => {
-  Controllers.favoriteController.deleteFavorites(req, res)
+  Controllers.recentController.deleteRecent(req, res)
 })
 
 // console.log("Router:", req.body)

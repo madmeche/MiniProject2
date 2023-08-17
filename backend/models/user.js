@@ -42,27 +42,27 @@ User.init(
       allowNull: false,
       required: true,
     },
-    // PLURAL WILL CONTAIN A JSON OBJECT OF PLANTS IDS
-    plantIds: {
-      type: DataTypes.JSON,
+    // // PLURAL WILL CONTAIN A JSON OBJECT OF PLANTS IDS
+    // plantIds: {
+    //   type: DataTypes.JSON,
      
-    },
-    //PLURAL WILL CONTAIN A JOSN OBJECT OF FOLDER IDS
-    folderId: {
-      type: DataTypes.JSON,
+    // },
+    // //PLURAL WILL CONTAIN A JOSN OBJECT OF FOLDER IDS
+    // folderId: {
+    //   type: DataTypes.JSON,
   
-    },
-    //SINGULAR WILL POINT TO A RECORD BY FAVORITE ID
-    favoriteId: {
-      type: DataTypes.STRING,
+    // },
+    // //SINGULAR WILL POINT TO A RECORD BY FAVORITE ID
+    // favoriteId: {
+    //   type: DataTypes.STRING,
 
-    },
+    // },
 
-    //SINGULAR WILL POINT TO A RECORD BY RECENT ID
-    recentId: {
-      type: DataTypes.STRING,
-      timestamps: true,
-    },
+    // //SINGULAR WILL POINT TO A RECORD BY RECENT ID
+    // recentId: {
+    //   type: DataTypes.STRING,
+    //   timestamps: true,
+    // },
     
 },
   {

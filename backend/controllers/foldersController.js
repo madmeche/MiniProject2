@@ -1,23 +1,21 @@
 const Models = require('../models')
 
-// const getPlant = (res) => {
-// Models.Plant.findAll({
-//     where: {
-//       type: "9a", // main search param
-//       [Op.or]: [
-//         {sun_exposure: "1-3"},
-//         {sun_exposure: "3-6"}
-//       ]
-//     }
-//     .then((data) => {
-//         res.send({result: 200, data: data})
-//     })
-//     .catch(err => {
-//         console.log("Error:", err)
-//         throw err
-//       })
-// })
-// }
+const getFolder = (res) => {
+  Models.Folder.findAll({})
+    .then((data) => {
+      // Do NOT return passwords
+      // Remove the password key before returning
+      // Either through Javascript, OR through scope attribute, see: /models/user.js Line #45
+      // for(const user in data){
+      //   data[user].password = undefined //The Javascript way of removing a property.key
+      // }
+      res.send({result: 200, data: data})
+    })
+    .catch(err => {
+      console.log("Error:", err)
+      throw err
+    })
+}
 
 const createFolder = async (data, res) => {
     
@@ -57,6 +55,6 @@ const createFolder = async (data, res) => {
   }
   
   module.exports = {
-    createFolder, updateFolder, deleteFolder
+    getFolder, createFolder, updateFolder, deleteFolder
   }
 

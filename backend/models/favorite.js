@@ -4,9 +4,9 @@ let dbConnect = require("../dbConnect");
 
 const sequelizeInstance = dbConnect.Sequelize;
 
-class Folder extends Model {}
+class Favorite extends Model {}
 
-Folder.init(
+Favorite.init(
 // const newFolder = new Schema(
   {
     id: {
@@ -15,21 +15,15 @@ Folder.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      required: [true, "Please add a Folder Title"],
-      maxlength: [10, "Title can not be more than 25 characters"],
-      minlength: [3, "Title must have atleast three character"],
-    },
     plantIds: {
       type: DataTypes.JSON,
     },
   },
   {
     sequelize: sequelizeInstance,
-    modelName: "folder",
+    modelName: "favorite",
     timestamps: true,
   }
 );
 
-module.exports = Folder;
+module.exports = Favorite;

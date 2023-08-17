@@ -25,7 +25,7 @@ Plant.init(
       required: true,
     },
     image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
       required: true,
     },
@@ -35,12 +35,12 @@ Plant.init(
       required: true,
     },
     sunExposure: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
       allowNull: false,
       required: true,
     },
     season: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
       allowNull: false,
       required: true,
     },
@@ -50,7 +50,7 @@ Plant.init(
       required: true,
     },
     zone: {
-      type: DataTypes.STRING,
+      type: DataTypes.JSON,
       allowNull: false,
       required: true,
     },

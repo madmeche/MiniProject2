@@ -5,18 +5,21 @@ const data = [
     firstName: "first",
     lastName: "person",
     email: "user1@email.com",
+    username: "firstperson",
     password: "12345",
   },
   {
     firstName: "second",
     lastName: "person",
     email: "user2@email.com",
+    username: "secondperson",
     password: "12345",
   },
   {
     firstName: "third",
     lastName: "person",
     email: "user3@email.com",
+    username: "thirdperson",
     password: "12345",
   },
   
